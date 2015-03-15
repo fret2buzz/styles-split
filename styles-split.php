@@ -3,7 +3,7 @@ $workingPath = 'd:/temp';
 $cssFiles = $workingPath . '/css';
 $cssLocales = $workingPath . '/css/';
 $cssFixedFiles = $workingPath . '/css/';
-$reg = "#\.ie8|ie9#msiu";
+$pattern = "#\.ie8|ie9#msiu";
 $component = 'ie';
 $files = glob($cssFiles . '/*.css');
 foreach ($files as $k => $v) {
@@ -54,7 +54,7 @@ foreach ($files as $k => $v) {
 			continue;
 		$splitted = trim($line);
 		$splitted = explode('{', $splitted);
-		if (preg_match($reg, $splitted[0])) {
+		if (preg_match($pattern, $splitted[0])) {
 			if (strpos($splitted[0], ',') !== false) {
 				$classes = trim($splitted[0]);
 				$classes = explode(',', $classes);
@@ -62,7 +62,7 @@ foreach ($files as $k => $v) {
 					$class = trim($class);
 					if (empty($class))
 						continue;
-					if (!preg_match($reg, $class))
+					if (!preg_match($pattern, $class))
 						continue;
 					$outputCss .= $class . ' {' . $splitted[1] . '}' . "\n";
 				}
@@ -70,7 +70,7 @@ foreach ($files as $k => $v) {
 				$outputCss .= $splitted[0] . ' {' . $splitted[1] . '}' . "\n";
 			}
 		}
-		if (preg_match($reg, $splitted[0])) {
+		if (preg_match($pattern, $splitted[0])) {
 			if (strpos($splitted[0], ',') !== false) {
 				$nClasses = trim($splitted[0]);
 				$nClasses = explode(',', $nClasses);
@@ -79,7 +79,7 @@ foreach ($files as $k => $v) {
 					$nClass = trim($nClass);
 					if (empty($nClass))
 						continue;
-					if (!preg_match($reg, $nClass)) {
+					if (!preg_match($pattern, $nClass)) {
 						array_push($classAr, $nClass);
 					}
 				}
@@ -110,7 +110,7 @@ foreach ($files as $k => $v) {
 			if (empty($splittedCode))
 				continue;
 			$splittedCode = explode('{', $splittedCode);
-			if (preg_match($reg, $splittedCode[0])) {
+			if (preg_match($pattern, $splittedCode[0])) {
 				if (strpos($splittedCode[0], ',') !== false) {
 					$classes = trim($splittedCode[0]);
 					$classes = explode(',', $classes);
@@ -118,7 +118,7 @@ foreach ($files as $k => $v) {
 						$class = trim($class);
 						if (empty($class))
 							continue;
-						if (!preg_match($reg, $class))
+						if (!preg_match($pattern, $class))
 							continue;
 						$outputCss2 .= $class . ' {' . $splittedCode[1] . '}' . "\n";
 					}
@@ -126,7 +126,7 @@ foreach ($files as $k => $v) {
 					$outputCss2 .= $splittedCode[0] . ' {' . $splittedCode[1] . '}' . "\n";
 				}
 			}
-			if (preg_match($reg, $splittedCode[0])) {
+			if (preg_match($pattern, $splittedCode[0])) {
 				if (strpos($splittedCode[0], ',') !== false) {
 					$nClasses = trim($splittedCode[0]);
 					$nClasses = explode(',', $nClasses);
@@ -135,7 +135,7 @@ foreach ($files as $k => $v) {
 						$nClass = trim($nClass);
 						if (empty($nClass))
 							continue;
-						if (!preg_match($reg, $nClass)) {
+						if (!preg_match($pattern, $nClass)) {
 							array_push($classAr2, $nClass);
 						}
 					}

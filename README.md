@@ -1,6 +1,6 @@
 # styles-split
 
->Split a CSS file based on selectors. Useful for building old IE stylesheets for example.
+>Split a CSS file based on selectors. (e.g. removing old IE stylesheets etc.)
 
 #Overview
 
@@ -15,7 +15,7 @@ $cssLocales = $workingPath . '/css/'; //Destination for css file with removed cl
 
 $cssFixedFiles = $workingPath . '/css/'; //Destination for new css without specified  classes 
 
-$reg = "#\.ie8|ie9#msiu"; //Regex of classnames you want to remove
+$reg = "#\.ie8|ie9#msiu"; //Regex of selectors you want to remove
 
 $component = 'ie'; //Name your new file which contains removed styles (main.css --> main-ie.css)
 ```

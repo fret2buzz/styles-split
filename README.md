@@ -17,7 +17,7 @@ $cssFixedFiles = $workingPath . '/css/'; //Destination for new css without speci
 
 $reg = "#\.ie8|ie9#msiu"; //Regex of selectors you want to remove
 
-$component = 'ie'; //Name your new file which contains removed styles (main.css --> main-ie.css)
+$component = 'ie'; //new file will be named like this (main.css --> main-ie.css)
 ```
 
 #Getting started

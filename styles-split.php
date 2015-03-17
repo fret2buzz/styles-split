@@ -18,6 +18,7 @@ foreach ($files as $k => $v) {
 	$cssCode = preg_replace("#\/\*[\S\s]*?\*\/#", '', $cssCode);
 	$cssCode = preg_replace("#\}\s+\}#msiu", '}}', $cssCode);
 	$cssCode = preg_replace("#\)\s+\{#msiu", '){', $cssCode);
+	$cssCode = str_replace("\r", '', $cssCode);
 	$cssCode = str_replace("\n", '', $cssCode);
 	$cssCode = str_replace("@media", 'this1-is-media1-query', $cssCode);
 	$cssCode = explode("this1-is-", $cssCode);

@@ -24,6 +24,7 @@ $component = 'ie'; // (main.css --> main-ie.css)
 PHP is required. [Installation and Configuration](http://php.net/manual/en/install.php)
 
 Once it has been installed simply run this in your command line
+
 ``` 
 php styles-split.php
 ```

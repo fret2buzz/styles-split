@@ -9,15 +9,15 @@ Configuration is in the head of the script
 ```php 
 $workingPath = 'd:/temp'; //Working path
 
-$cssFiles = $workingPath . '/css'; //Working folder with your css files
+$cssFiles = $workingPath . '/css'; // working folder with your css files
 
-$cssLocales = $workingPath . '/css/'; //Destination for css file with removed classes
+$cssLocales = $workingPath . '/css/'; // css file with removed rules
 
-$cssFixedFiles = $workingPath . '/css/'; //Destination for new css without specified  classes 
+$cssFixedFiles = $workingPath . '/css/'; // new css without specified rules
 
-$reg = "#\.ie8|ie9#msiu"; //Regex of selectors you want to remove
+$reg = "#\.ie8|ie9#msiu"; // regex of selectors you want to remove
 
-$component = 'ie'; //new file will be named like this (main.css --> main-ie.css)
+$component = 'ie'; // (main.css --> main-ie.css)
 ```
 
 #Getting started

@@ -7,21 +7,26 @@
 Configuration is in the head of the script
 
 ```php 
-$workingPath = 'd:/temp'; //Working path
+$workingPath = 'c:/cleanup/local/';
+$cssFiles = $workingPath . 'input/';
+$cssLocales = $workingPath . 'components/';
+$patchesPath = $workingPath . 'patches/';
+$originalsPath = $workingPath . 'originals/';
+$cssFixedFiles = $cssFiles;
 
-$cssFiles = $workingPath . '/css'; // working folder with your css files
+$files = glob($cssFiles . '*.css');
+$cssCombLine = 'csscomb --config "c:/cleanup/.csscomb.json" --verbose ';
 
-$cssLocales = $workingPath . '/css/'; // css file with removed rules
-
-$cssFixedFiles = $workingPath . '/css/'; // new css without specified rules
-
-$reg = "#\.ie8|ie9#msiu"; // regex of selectors you want to remove
-
-$component = 'ie'; // (main.css --> main-ie.css)
+$arrayPattern = array(
+	'ie8' => "#ie8#msi",
+	'ie9' => "#ie9#msi"
+);
 ```
 
 #Getting started
 PHP is required. [Installation and Configuration](http://php.net/manual/en/install.php)
+csscomb is required
+git diff utility is required
 
 Once it has been installed simply run this in your command line
 

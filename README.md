@@ -25,7 +25,9 @@ $arrayPattern = array(
 
 #Getting started
 PHP is required. [Installation and Configuration](http://php.net/manual/en/install.php)
+
 csscomb is required
+
 git diff utility is required
 
 Once it has been installed simply run this in your command line
